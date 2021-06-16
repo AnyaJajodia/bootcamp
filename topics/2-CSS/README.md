@@ -18,9 +18,18 @@
 
 ## Grid
 
+## Transformations
+
+## Transition, Animation
+
 ## Frameworks
 
 - [Bootstrap](https://getbootstrap.com)
 - [Foundation/Zurb](https://get.foundation)
 - [Tailwind CSS](https://tailwindcss.com)
 - [Bulma](https://bulma.io)
+
+## Design Inspiration
+
+- [Dribbble](https://dribbble.com)
+- [Awwwards](https://www.awwwards.com)
