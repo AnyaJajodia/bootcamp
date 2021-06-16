@@ -14,7 +14,6 @@ Beginner introduction to Web technologies. How does the Web browser work over th
 
 ## Technology
 
-HTML
-CSS
-JavaScript
-
+- HTML
+- CSS
+- JavaScript
