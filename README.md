@@ -4,9 +4,9 @@ Web Development bootcamp for beginners
 
 ## Pre-Requisites
 
-[Visual Studio Code](https://code.visualstudio.com/)
-[Google Chrome](https://www.google.com/chrome/index.html)
-[Postman](https://www.postman.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Google Chrome](https://www.google.com/chrome/index.html)
+- [Postman](https://www.postman.com/)
 
 ## Overview
 
