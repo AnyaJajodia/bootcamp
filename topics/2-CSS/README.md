@@ -34,6 +34,14 @@
 - [Dribbble](https://dribbble.com)
 - [Awwwards](https://www.awwwards.com)
 
+## Color Samples
+
+- [Kits](https://htmlcolors.com/palettes)
+
+## Royalty-free images
+
+- [Unsplash](https://unsplash.com)
+
 ## Video Tutorials
 
 [CSS Crash Course For Absolute Beginners](https://www.youtube.com/watch?v=yfoY53QXEnI)
