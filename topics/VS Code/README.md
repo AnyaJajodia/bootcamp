@@ -18,7 +18,8 @@
 1. Download and install VS Code
 2. (Optional) Install "GitHub Pull Requests and Issues" extension in VS Code
 3. Install Git executable
-4. Login to GitHub: Click the Accounts icon (Left-hand windows border, vertical column, second icon from the bottom)
+4. Restart VS Code
+5. Login to GitHub: Click the Accounts icon (Left-hand windows border, vertical column, second icon from the bottom)
 
 ### Other options to install Git on Mac
 
