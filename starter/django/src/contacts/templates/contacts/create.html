@@ -1,0 +1,31 @@
+<h1>ADD Contact</h1>
+<p>This is the add contact page</p>
+
+
+<div>
+    <form action="{% url 'contacts:contact_create' %}" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend><h1>Contact</h1></legend>
+            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+            
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" value="">
+            <br>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="">
+            <br>
+            <label for="mobile">Mobile</label>
+            <input type="text" name="mobile" id="mobile" value="">
+            <br>
+            <label for="company">Company</label>
+            <input type="text" name="company" id="company" value="">
+            <br>
+            <label for="designation">Designation</label>
+            <input type="text" name="designation" id="designation" value="">
+            
+        </fieldset>
+        <input type="submit" value="Save">
+    </form>
+
+</div>

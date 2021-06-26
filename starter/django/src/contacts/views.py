@@ -19,14 +19,21 @@ def index(request):
 def details(request, contact_id):
     """Details for Contact
     """
-    return HttpResponse('Contacts Details Page')
-
+    # return HttpResponse('Contacts Details Page')
+    contact = Contact.objects.first(pk=contact_id)
+    return render(request, template_name='contacts/details.html', context={
+        'contact': contact,
+    })
 
 def create(request):
     """Create New Contact
     """
-    return HttpResponse('Contacts Create Page')
-    
+    if request.method == 'POST':
+        pass
+    # return HttpResponse('Contacts Create Page')
+    return render(request, template_name='contacts/create.html', context={
+        # 'contacts': contacts,
+    })
 
 def edit(request, contact_id):
     """Edit Contact
