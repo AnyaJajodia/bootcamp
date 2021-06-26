@@ -18,4 +18,6 @@ Beginner introduction to Web technologies. How does the Web browser work over th
 - CSS
 - JavaScript
 
-EOF
+## Useful Links
+
+[.girignore samples](https://github.com/github/gitignore)

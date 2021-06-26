@@ -9,4 +9,23 @@
 ## Setup
 
 1. Create a Python Virtual Environment
-2. 
+
+``` bash
+cd bootcamp/starter/django/
+python3.9 -m venv venv
+source venv/bin/activate
+```
+
+2. Install Django
+
+``` bash
+pip install --upgrade pip
+pip install django
+pip freeze > requirements.txt
+```
+
+3. Create Project
+
+``` bash
+
+```
