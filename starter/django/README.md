@@ -21,6 +21,9 @@
 `pip freeze > requirements.txt`
 `python -m django --version`
 
+or install all requisites
+`pip install -r ./site/requirements.txt`
+
 3. Create Django Project, and app
 
 `django-admin startproject businessproject`

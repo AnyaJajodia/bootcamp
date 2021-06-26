@@ -1,2 +1,17 @@
 <h1>Details Contact</h1>
 <p>This is the details contact page</p>
+
+<div>
+    {% if contact %}
+    <ul>
+        <li>Name: {{ contact.name }}</li>
+        <li>Email: {{ contact.email }}</li>
+        <li>Mobile: {{ contact.mobile }}</li>
+        <li>Company: {{ contact.company }}</li>
+        <li>Designation: {{ contact.designation }}</li>
+        <li>Notes {{ contact.notes }}</li>
+    </ul>
+    {% else %}
+        <p>Invalid Contact object!</p>
+    {% endif %}
+</div>
