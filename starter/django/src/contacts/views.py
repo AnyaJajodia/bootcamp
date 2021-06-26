@@ -3,6 +3,8 @@ from django.http import HttpResponse
 
 from .models import Contact
 
+# CRUD Create, Retrieve, Update, Delete, Index or List of objects/page/items
+
 
 def index(request):
     """List Contacts

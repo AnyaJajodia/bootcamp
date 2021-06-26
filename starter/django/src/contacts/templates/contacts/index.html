@@ -7,8 +7,8 @@
 {% if contacts %}
     <h2>{{ contacts.length }}</h2>
     <ol>
-    {% for contact in contacts %}
-        <li>{{ contact.name }}</li>
+    {% for c in contacts %}
+        <li>{{ c.name }}</li>
     {% endfor %}
     </ol>
 {% else %}
