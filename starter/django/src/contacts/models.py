@@ -16,7 +16,7 @@ class Contact(models.Model):
     designation = models.CharField(max_length=50, blank=True, null=True)
     notes = models.TextField(max_length=300, null=True, blank=True)
 
-    def some_method():
-        pass
+    def check_is_duplicate(self):
+        return Contact.objects.where(email=self.email, mobile=self.mobile).exists()
 
-    
+
