@@ -1,0 +1,17 @@
+<div>
+    <h1>Contacts</h1>
+    <p>This is the list all contacts page</p>
+</div>
+
+<div>
+{% if contacts %}
+    <h2>{{ contacts.length }}</h2>
+    <ol>
+    {% for contact in contacts %}
+        <li>{{ contact.name }}</li>
+    {% endfor %}
+    </ol>
+{% else %}
+    <h3>No Contacts found. Please add some contacts for me to display!</h2>
+{% endif %}
+</div>

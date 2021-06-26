@@ -95,3 +95,11 @@ Add models to admin
 
 `python manage.py shell`
 
+### Templates
+
+App Template Folder: starter/django/src/contacts/templates/contacts
+App Static folder: starter/django/src/contacts/static/cloudwrk
+
+App Template folder will contain all the HTML files ONLY.
+Asset files e.g. JS, CSS, Images etc are in the static folder 
+

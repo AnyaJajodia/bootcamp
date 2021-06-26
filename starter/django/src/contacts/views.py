@@ -7,7 +7,11 @@ from .models import Contact
 def index(request):
     """List Contacts
     """
-    return HttpResponse('Contacts Index Page')
+    # return HttpResponse('Contacts Index Page')
+    contacts = Contact.objects.all()
+    return render(request, template_name='contacts/index.html', context={
+        'contacts': contacts,
+    })
 
 
 def details(request, contact_id):
