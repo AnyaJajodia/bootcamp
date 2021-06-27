@@ -3,6 +3,7 @@
 ## Links
 
 [Django](https://www.djangoproject.com)
+[Django DRF](https://www.django-rest-framework.org)
 [Bootstrap Template](https://getbootstrap.com)
 [VS Code Django Tutorial](https://code.visualstudio.com/docs/python/tutorial-django)
 
@@ -111,3 +112,7 @@ Asset files e.g. JS, CSS, Images etc are in the static folder
 Collate /static directory
 `python manage.py collectstatic`
 
+## API app (REST API)
+
+`python manage.py startapp api`
+`pip install djangorestframework`

@@ -6,10 +6,12 @@
 {% block title %} Contact create{% endblock title %}
 
 {% block content %}
+<div class="container-fluid">
 
-<h1>CREATE Contact</h1>
-<p>This is the add contact page</p>
-
+<div class="row">
+    <h1>CREATE Contact</h1>
+    <p>This is the add contact page</p>
+</div>
 <div>
     <form action="{% url 'contacts:contact_create' %}" method="post">
         {% csrf_token %}
@@ -41,5 +43,6 @@
         <input type="submit" value="Save">
     </form>
 
+</div>
 </div>
 {% endblock content %}

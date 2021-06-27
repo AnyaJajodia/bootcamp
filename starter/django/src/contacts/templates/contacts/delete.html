@@ -6,10 +6,12 @@
 {% block title %} Contact delete{% endblock title %}
 
 {% block content %}
+<div class="container-fluid">
 
-<h1>DELETE Contact</h1>
-<p>This is the delete contact page</p>
-
+<div class="row">
+    <h1>DELETE Contact</h1>
+    <p>This is the delete contact page</p>
+</div>
 <div>
     {% if contact %}
     <form method="POST" action="{% url 'contacts:contact_delete' contact_id=contact.id %}">
@@ -31,5 +33,6 @@
     {% else %}
         <p>Invalid Contact object!</p>
     {% endif %}
+</div>
 </div>
 {% endblock content %}

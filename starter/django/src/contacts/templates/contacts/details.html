@@ -6,9 +6,12 @@
 {% block title %}Contact details{% endblock title %}
 
 {% block content %}
+<div class="container-fluid">
 
-<h1>Details Contact</h1>
-<p>This is the details contact page</p>
+<div class="row">
+    <h1>Details Contact</h1>
+    <p>This is the details contact page</p>
+</div>
 <div>
     <a href="{% url 'contacts:contact_edit' contact_id=contact.id %}">Edit</a> <a href="{% url 'contacts:contact_delete' contact_id=contact.id %}">Delete</a>
 </div>
@@ -26,4 +29,5 @@
         <p>Invalid Contact object!</p>
     {% endif %}
 </div>
+</div>  
 {% endblock content %}
