@@ -1,2 +1,25 @@
 <h1>DELETE Contact</h1>
 <p>This is the delete contact page</p>
+
+<div>
+    {% if contact %}
+    <form method="POST" action="{% url 'contacts:contact_delete' contact_id=contact.id %}">
+            
+        {% csrf_token %}
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item py-1">Name: {{ contact.name|default_if_none:"" }}</li>
+            <li class="list-group-item py-1">Email: {{ contact.email|default_if_none:"" }}</li>
+            <li class="list-group-item py-1">Mobile: {{ contact.mobile|default_if_none:"" }}</li>
+            <li class="list-group-item py-1">Company: {{ contact.company|default_if_none:"" }}</li>
+            <li class="list-group-item py-1">Designation: {{ contact.designation|default_if_none:"" }}</li>
+            <li class="list-group-item py-1">Notes {{ contact.notes|default_if_none:"" }}</li>
+        </ul>
+        
+        <input class="btn btn-sm btn-success" type="submit" value="Confirm DELETE"/>
+    </form>
+    
+
+    {% else %}
+        <p>Invalid Contact object!</p>
+    {% endif %}
+</div>

@@ -10,7 +10,7 @@ class Contact(models.Model):
     # Required
     name = models.CharField(max_length=100) # 255
     email = models.EmailField()
-    mobile = models.CharField(max_length=10)
+    mobile = models.CharField(max_length=25)
     # Optional
     company = models.CharField(max_length=100, blank=True, null=True)
     designation = models.CharField(max_length=50, blank=True, null=True)

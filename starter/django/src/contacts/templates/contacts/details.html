@@ -1,15 +1,17 @@
 <h1>Details Contact</h1>
 <p>This is the details contact page</p>
-
+<div>
+    <a href="{% url 'contacts:contact_edit' contact_id=contact.id %}">Edit</a> <a href="{% url 'contacts:contact_delete' contact_id=contact.id %}">Delete</a>
+</div>
 <div>
     {% if contact %}
     <ul>
-        <li>Name: {{ contact.name }}</li>
-        <li>Email: {{ contact.email }}</li>
-        <li>Mobile: {{ contact.mobile }}</li>
-        <li>Company: {{ contact.company }}</li>
-        <li>Designation: {{ contact.designation }}</li>
-        <li>Notes {{ contact.notes }}</li>
+        <li>Name: {{ contact.name|default_if_none:"" }}</li>
+        <li>Email: {{ contact.email|default_if_none:"" }}</li>
+        <li>Mobile: {{ contact.mobile|default_if_none:"" }}</li>
+        <li>Company: {{ contact.company|default_if_none:"" }}</li>
+        <li>Designation: {{ contact.designation|default_if_none:"" }}</li>
+        <li>Notes {{ contact.notes|default_if_none:"" }}</li>
     </ul>
     {% else %}
         <p>Invalid Contact object!</p>

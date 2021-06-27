@@ -2,13 +2,15 @@
     <h1>Contacts</h1>
     <p>This is the list all contacts page</p>
 </div>
-
+<div>
+    <a href="{% url 'contacts:contact_create' %}">Create</a>
+</div>
 <div>
 {% if contacts %}
     <h2>{{ contacts.length }}</h2>
     <ol>
     {% for c in contacts %}
-        <li>{{ c.name }}</li>
+        <li><a href="{% url 'contacts:contact_details' contact_id=c.id %}">{{ c.name }}</a></li>
     {% endfor %}
     </ol>
 {% else %}
