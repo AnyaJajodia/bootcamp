@@ -106,3 +106,8 @@ App Static folder: starter/django/src/contacts/static/cloudwrk
 App Template folder will contain all the HTML files ONLY.
 Asset files e.g. JS, CSS, Images etc are in the static folder 
 
+### Static Content
+
+Collate /static directory
+`python manage.py collectstatic`
+

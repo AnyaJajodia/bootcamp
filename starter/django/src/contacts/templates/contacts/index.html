@@ -1,19 +1,29 @@
-<div>
-    <h1>Contacts</h1>
-    <p>This is the list all contacts page</p>
-</div>
-<div>
-    <a href="{% url 'contacts:contact_create' %}">Create</a>
-</div>
-<div>
-{% if contacts %}
-    <h2>{{ contacts.length }}</h2>
-    <ol>
-    {% for c in contacts %}
-        <li><a href="{% url 'contacts:contact_details' contact_id=c.id %}">{{ c.name }}</a></li>
-    {% endfor %}
-    </ol>
-{% else %}
-    <h3>No Contacts found. Please add some contacts for me to display!</h2>
-{% endif %}
-</div>
+{% extends 'base.html' %}
+
+{% load l10n %}
+{% load i18n %}
+
+{% block title %}Contacts{% endblock title %}
+
+{% block content %}
+    <div class="row">
+        <h1>Contacts</h1>
+        <p>This is the list all contacts page</p>
+    </div>
+    <div class="row">
+        <a href="{% url 'contacts:contact_create' %}">Create</a>
+    </div>
+    <div class="row">
+    {% if contacts %}
+        <h2>{{ contacts.length }}</h2>
+        <ol>
+        {% for c in contacts %}
+            <li><a href="{% url 'contacts:contact_details' contact_id=c.id %}">{{ c.name }}</a></li>
+        {% endfor %}
+        </ol>
+    {% else %}
+        <h3>No Contacts found. Please add some contacts for me to display!</h2>
+    {% endif %}
+    </div>
+
+{% endblock content %}

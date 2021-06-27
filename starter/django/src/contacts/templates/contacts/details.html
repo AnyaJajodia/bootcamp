@@ -1,3 +1,12 @@
+{% extends 'base.html' %}
+
+{% load l10n %}
+{% load i18n %}
+
+{% block title %}Contact details{% endblock title %}
+
+{% block content %}
+
 <h1>Details Contact</h1>
 <p>This is the details contact page</p>
 <div>
@@ -17,3 +26,4 @@
         <p>Invalid Contact object!</p>
     {% endif %}
 </div>
+{% endblock content %}
