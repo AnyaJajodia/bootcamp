@@ -5,12 +5,20 @@ from django.http import HttpResponse
 from .models import Contact
 from .forms import ContactForm
 
+# List
+# CRUD
+# Create
+# Retreive 
+# Update 
+# Delete
+
+# ORM - Object Relational Model
 
 def index(request):
     """List Contacts
     """
     # return HttpResponse('Contacts Index Page')
-    contacts = Contact.objects.all()
+    contacts = Contact.objects.all() # QuerySet
     return render(
         request, 
         template_name='contacts/index.html', 
@@ -40,7 +48,7 @@ def create(request):
     form = ContactForm()
 
     # Creating Contact
-    if request.method == 'POST':
+    if request.method == 'POST': # GET, PUT, PATCH, DELETE
         form = ContactForm(data=request.POST)
         if form.is_valid():
             contact = form.save(commit=False)
@@ -101,6 +109,7 @@ def edit(request, contact_id):
             'contact_id': contact.id,
         }
     )
+
 
 def delete(request, contact_id):
     """Delete Contact

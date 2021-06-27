@@ -19,14 +19,14 @@
             <legend><h1>Contact</h1></legend>
             {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
             
-            <label for="name">Name</label><br>
-            <input type="text" name="name" id="id_name" value="{{ form.name.value|default_if_none:'' }}">
+            <label for="name" class="form-label"></label>Name</label><br>
+            <input type="text" name="name" id="id_name" value="{{ form.name.value|default_if_none:'' }}"  class="form-control">
             <br>
-            <label for="email">Email</label><br>
-            <input type="email" name="email" id="id_email" value="{{ form.email.value|default_if_none:''  }}">
+            <label for="email" class="form-label"></label>Email</label><br>
+            <input type="email" name="email" id="id_email" value="{{ form.email.value|default_if_none:'' }}" class="form-control">
             <br>
-            <label for="mobile">Mobile</label><br>
-            <input type="text" name="mobile" id="id_mobile" value="{{ form.mobile.value|default_if_none:''  }}">
+            <label for="mobile" class="form-label"></label>Mobile</label><br>
+            <input type="text" name="mobile" id="id_mobile" value="{{ form.mobile.value|default_if_none:'' }}" class="form-control">
             <br>
             <label for="company">Company</label><br>
             <input type="text" name="company" id="id_company" value="{{ form.company.value|default_if_none:''  }}">
@@ -40,7 +40,7 @@
             {# {{ form }} #}
 
         </fieldset>
-        <input type="submit" value="Save">
+        <input type="submit" value="Save" class="btn btn-primary">
     </form>
 
 </div>
