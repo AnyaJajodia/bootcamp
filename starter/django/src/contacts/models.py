@@ -18,5 +18,3 @@ class Contact(models.Model):
 
     def check_is_duplicate(self):
         return Contact.objects.where(email=self.email, mobile=self.mobile).exists()
-
-
