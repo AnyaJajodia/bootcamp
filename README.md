@@ -10,7 +10,7 @@ Web Development bootcamp for beginners
 
 ## Overview
 
-Beginner introduction to Web technologies. How does the Web browser work over the Internet?
+Introduction to Web technologies, popular Programming Languages, Libraries and Frameworks with starter projects.
 
 ## Technology
 
