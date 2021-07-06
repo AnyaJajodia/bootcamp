@@ -1,6 +1,6 @@
 # Web Scraping
 
-Web scraping is the process of parsing a web page or website and converting part of it into structured data usually in the form of a CSV that is compatible for import into a database. Some sites restrict web scraping or limits the connections, always check the terms of use for any legal restrictions. 
+Web scraping is the process of parsing a web page or website and converting part of it into structured data usually in the form of a CSV that is compatible for import into a database. Some sites restrict web scraping or limits the connections, always check the terms of use for any legal restrictions.
 
 ## Python (Beautiful Soap)
 
@@ -28,7 +28,7 @@ soup = BeautifulSoup("<html>a web page</html>", 'html.parser')
 
 The HTML source/doc is converted by BeautifulSoap to Unicode, and HTML entities are converted to Unicode characters in python objects, commonly used ones are;
 
-1. Tag 
+1. Tag
 2. NavigableString
 3. BeautifulSoup
 
@@ -344,10 +344,9 @@ soup.find_all(has_class_but_no_id)
 #  <p class="story">...</p>]
 ```
 
-
 `find_all(name, attrs, recursive, string, limit, **kwargs)`
 
-The `find_all()` method looks through a tag’s descendants and retrieves all descendants that match your filters. 
+The `find_all()` method looks through a tag’s descendants and retrieves all descendants that match your filters.
 
 ``` python
 soup.find_all("title")
@@ -595,5 +594,3 @@ soup.select('a[href*=".com/el"]')
 ```
 
 There’s also a method called select_one(), which finds only the first tag that matches a selector,
-
-
