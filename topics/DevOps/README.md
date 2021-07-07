@@ -1,12 +1,18 @@
 # Developer Operations (DevOps)
 
+Development and Operations have been merged to form the new DevOps strategy. This allows for the principle of a Continuous Integration Pipeline. This consists of the following steps;
+
+1. Continuous Integration
+2. Continuous Delivery
+3. Continuous Deployment
+
 ## Continuous Integration (CI)
 
-Continuous integration is the practice of automatic merging of code changes made by members of the development team into a single codebase. It is considered as a Developer Operations (DevOps) best practice. This central repository is where builds are made and tests are run. Automated tools then assert the codebase validity before integration.
+Continuous integration is the practice of automatic merging of code changes made by members of the development team into a single codebase. It is considered as a Development Operations (DevOps) best practice. This central repository is where builds are made and tests are run. Automated tools then assert the codebase validity before integration. Coding standards, code quality and syntax checks can also be run at this stage.
 
 ## Continuous Delivery
 
-
+Continuous Delivery is the next stage in the CI pipeline, automated build tools create an enduser deliverable package. 
 
 ## Continuous Deployment (CD)
 
