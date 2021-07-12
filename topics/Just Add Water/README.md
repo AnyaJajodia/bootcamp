@@ -2,7 +2,7 @@
 
 ## I don't want to be a geek/nerd/hacker at 40, I have a life now
 
-Computer Programming technology does a complete refresh almost every 3-5 years. This is true for both the commercial potential as well as most of the underlying technology that binds an application or service together. After going through the wringer a few times, one realises that the retraining process is no longer as exciting as it once was. Relearning new coding recepies, syntax and essentially reinventing the wheel constuction process to be more effecient with a multifunctional wheel gets old after a few iterations. 
+Computer Programming technology does a complete refresh almost every 3-5 years. This is true for both the commercial potential as well as most of the underlying technology that binds an application or service together. After going through the wringer a few times, one realises that the retraining process is no longer as exciting as it once was. Relearning new coding recepies, syntax and reinventing-the-wheel to be more efficient and multifunctional tool gets old after a few iterations. 
 
 So now what, well you've got a few years of experience under your belt so time to jump into the big-bucks field. But what are they?
 
