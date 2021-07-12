@@ -10,7 +10,7 @@ So now what, well you've got a few years of experience under your belt so time t
 2. DevOps Engineer
 3. Software Architect
 
-All of the above have an average salary of $120k - $150k (2021 figures) and are at the top of the job pyramid. 
+All of the above have an average salary of $120k - $150k (2021 figures) and are at the top of the job pyramid.
 
 References:
 
@@ -50,3 +50,5 @@ Essentially build the ability to use online/cloud tools available to solve a bus
 You are the water that will bind all the tools into a solution. Thus, add you to build and monitor the solution. Use off-the-shelf tools and services. The current model of developing an application or service from scratch is going to be too expensive and will take too long for production quality.
 
 Most of these tools will not require you to write any code or a minimal level of code at best.
+
+... to be continued.
