@@ -72,4 +72,46 @@ typeof(value)
 
 #### Loops
 
+While loop
+``` r
+# Loop 10 times
+counter <- 0
+while(counter < 10){
+  print(counter)
+  counter <- counter + 1
+}
+```
+
+For loop
+``` r
+# Loop 10 times
+range = 0:9
+for (counter in range) {
+  print(counter)
+}
+```
+
+#### if ... else if ... else statement
+
+``` r
+condition <- 1 > 2
+if(condition) {
+  print("Condition is true")
+}else {
+  print("Condition is false")
+}
+
+# Remove variable from environment
+rm(value)
+# Random Number
+value <- rnorm(1)
+print(value)
+if(value >= 1) {
+  print("More than equal to 1")
+}else if (value < 1 & value > -1) {
+  print("Almost Zero")
+} else if (value <= -1) {
+  print("Less than equal to -1")
+}
+```
 
