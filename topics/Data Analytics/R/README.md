@@ -14,8 +14,8 @@ Installers are available for all popular Operating Systems in the above links. D
 ## R-Programming
 
 "<-" is assignment operator, equivalent to "=" in most other languages.
-NA is not-assigned or not-available, equivalent to None or Nullin other languages.
-
+NA is not-assigned or not-available, equivalent to None in other languages.
+"?func" will display help for that function.
 
 ### Data Types
 
@@ -237,4 +237,36 @@ v1 * v2
 Operations between unequal vectors will result in the smaller vector being recycled. If larger vecctor length is not an exact multiple of the smaller vector, then R will recycle part of the smaller vector and print a warning.
 
 
+### Functions
+
+Use inline help "?<function name>" to learn more about builtin or installed functions.
+
+### Packages
+
+Packages are a collection of well defined R functions. Packages are stored in Libraries.
+
+``` R
+# Install package
+install.packages("package-name")
+# Activate Package
+library(package-name)
+# Test
+?function-witin-package()
+```
+
+Diamonds dataset sample
+
+``` R
+# Install and activate
+install.packages("ggplot2")
+library(ggplot2)
+# Test
+?qplot()
+?ggplot()
+?diamonds
+
+# Sample
+qplot(data=diamonds, carat, price, 
+      colour=clarity, facets = .~clarity)
+```
 
