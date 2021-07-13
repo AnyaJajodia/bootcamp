@@ -56,3 +56,20 @@ greet <- "Hello"
 contact <- 'Bob'
 paste(greet, contact)
 
+#### Comparison Operators
+
+== != < > <= >= ! | & isTRUE(x)
+
+value = 10 > 9
+typeof(value)
+
+``` r
+# AND
+3 > 4 & 4 < 5
+# OR
+3 > 4 | 4 < 5
+```
+
+#### Loops
+
+
