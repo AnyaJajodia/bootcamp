@@ -291,7 +291,29 @@ expenses <- c(12051.82, 5695.07, 12319.20, 12089.72, 8658.57, 840.20, 3285.73, 5
 ?mean()
 ?max()
 ?min()
+?match()
 
 # Solution
+profit.gross <- revenue - expenses
+# Tax Rate is 30%
+profit.net <- profit.gross * 0.7
+profit.average <- profit.net / revenue
+profit.average <- profit.average * 100
+profit.mean <- mean(profit.average)
+profit.max <- max(profit.average)
+profit.min <- min(profit.average)
 
+profit.good <- profit.average >= profit.mean
+profit.bad <- profit.average < profit.mean
+
+print(profit.average)
+print(profit.mean)
+print(paste(profit.min, profit.max))
+print(profit.good)
+print(profit.bad)
+
+profit.max_month <- match(profit.max, profit.average)
+profit.min_month <- match(profit.min, profit.average)
+print(profit.max_month)
+print(profit.min_month)
 ```
