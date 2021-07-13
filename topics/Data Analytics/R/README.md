@@ -2,7 +2,7 @@
 
 The R-language has a steep learning curve, so focus and pay attention. Its is a specialised language created for Data Analysis and Statistical Predictive Modeling. Google recommended.
 
-## R-Framework and R-Studio
+## R-Framework with R-Studio
 
 [R Framework](https://cloud.r-project.org)
 [R Studio](https://www.rstudio.com/products/rstudio/#rstudio-desktop)
@@ -12,6 +12,10 @@ The R-language has a steep learning curve, so focus and pay attention. Its is a 
 Installers are available for all popular Operating Systems in the above links. Download and install with default settings.
 
 ## R-Programming
+
+"<-" is assignment operator, equivalent to "=" in most other languages.
+NA is not-assigned or not-available, equivalent to None or Nullin other languages.
+
 
 ### Data Types
 
@@ -103,7 +107,7 @@ if(condition) {
 
 # Remove variable from environment
 rm(value)
-# Random Number
+# Random Number, normal deviation -3 to +3
 value <- rnorm(1)
 print(value)
 if(value >= 1) {
@@ -114,4 +118,123 @@ if(value >= 1) {
   print("Less than equal to -1")
 }
 ```
+
+
+### Exercise - Coin Toss probability validation
+
+The Law of Large Numbers theorizes that the average of a large number of results closely mirrors the expected value, and that difference narrows as more results are introduced.
+
+Statistics Terms:
+
+1. mean or average = sum of all values divided by total number of values
+
+2. median = the value separating the higher half from the lower half of a data sample, it may be thought of as "the middle" value
+
+3. standard deviation = how far on average the values differ from the mean, high deviation is for values far away from mean and low deviation is when values are clustered close to the mean
+
+4. normal distribution = Normal Distribution has a bell shape, the mean and median are equal, and 68% of the data falls within 1 standard deviation. ![Normal Distribution Image](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Standard_deviation_diagram.svg/2560px-Standard_deviation_diagram.svg.png)
+
+
+Exercise:
+Apply Law of Large Numbers to a series of coin tosses. So as the sample size increases the average value (mean) moves closer to the probable/expected value of 50%.
+
+``` r
+count <- 10000
+counter <- 0
+# heads
+for(i in rnorm(count)){
+  if (i > 0) {
+    counter <- counter + 1
+  }
+}
+
+average = counter / count
+print(paste(count, counter, average*100, "%"))
+```
+
+### Vectors
+
+A vector is a sequence of elements
+
+Numeric vector
+Character vector
+
+Vectors can only contain elements of the same type either number (integer or double) or character not mixed.
+All numbers are vectors os length 1
+
+``` r
+# Combine function
+my_vector <- c(1,2,3,4,5)
+print(my_vector)
+is.numeric(my_vector)
+is.integer(my_vector)
+is.double(my_vector)
+is.character(my_vector)
+
+# Integers are converted to double
+v2 <- c(1L,1,1)
+print(v2)
+is.numeric(v2)
+is.integer(v2)
+is.double(v2)
+
+# numbers are converted to characters
+v3 <- c("a", "b", 10)
+print(v3)
+is.character(v3)
+```
+
+Other functions to create a vector
+``` r
+# Sequence function
+seq(1,10)
+1:10
+seq(1,59,5)
+
+# Replicate function
+rep(5,10)
+rep("a",5)
+rep(c(1,2),2)
+```
+
+Vector elements can be accessed via their index which starts at 1 (not 0). Specifying a negative index will remove element from output vector e.g. v[-2] will output a vectpr without the element at index 2.
+
+``` r
+v = c(1,2,3,4,5,6,7,8,9,10)
+v[1]
+v[-2]
+v[2:6]
+v[c(2,4,6,8)] # Returns vector with elements in index 2,4,6,8
+v[c(-2,-4,-6,-8)] # Returns vector without elements in index 2,4,6,8
+v[seq(-1,-5,-2)]
+```
+
+Empty vectors with value NA
+
+``` R
+# Empty vector
+empty = c(NA, NA)
+typeof(empty)
+empty[1] <- 10
+print(empty)
+typeof(empty)
+```
+
+#### Vector Operations
+
+``` r
+v1 <- seq(1,5)
+v2 <- rep(10,5)
+print(v1)
+print(v2)
+
+v1 + v2
+v1 - v2
+v1 / v2
+v1 * v2
+```
+
+Operations between unequal vectors will result in the smaller vector being recycled. If larger vecctor length is not an exact multiple of the smaller vector, then R will recycle part of the smaller vector and print a warning.
+
+
 
