@@ -394,6 +394,18 @@ print(m3)
 
 ```
 
+When the subset is a single row or value the output is converted to a vector. For output to be a matrix use the `drop=FALSE` parameter. The extra dimension is not dropped.
+
+``` R
+m1 <- m[1,1]
+print(m1)
+is.vector(m1)
+
+m1 <- m[1,1, drop=F]
+print(m1)
+is.matrix(m1)
+```
+
 ### Exercise - IPL statistics
 
 Create matrices for top 10 IPL batsmen, row names are the player names, column names are the years 2015 - 2019.
@@ -425,15 +437,17 @@ n <- t(n)
 print(n)
 ```
 
-When the subset is a single row or value the output is converted to a vector. For output to be a matrix use the `drop=FALSE` parameter. The extra dimension is not dropped.
+ToDo: Matplot sample code
+
+### Functions
 
 ``` R
-m1 <- m[1,1]
-print(m1)
-is.vector(m1)
+create.matrix <- function(nrows, ncolumns=5) {
+  m <- matrix(1:25, nrow = nrows, ncol = ncolumns, byrow = T)
+  return(m)
+}
 
-m1 <- m[1,1, drop=F]
-print(m1)
-is.matrix(m1)
+m.new <- create.matrix(5)
+print(m.new)
 ```
 
