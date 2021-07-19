@@ -321,7 +321,8 @@ print(profit.min_month)
 ### Matrices
 
 A matrix has rows and columns. Index starts from 1.
-All elements are of same type.
+All elements are of same type. 
+Matrices can have named rows and columns.
 
 ``` R
 m[1]    # Row 1, Column 1
@@ -345,8 +346,19 @@ print(o)
 p <- cbind(seq(1,5), seq(6, 10))
 print(p)
 
-colnames(n) <- c("a","b","c","d","e")
+# Named rows, column
 rownames(n) <- c("1","2","3","4","5")
+colnames(n) <- c("a","b","c","d","e")
+
+print(n)
+print(n["3", "c"]) # element at the center
+
+# Assign value to element
+n["3","c"] <- 0
+
+# Clear names
+rownames(n) <- NULL
+colnames(n) <- NULL
 print(n)
 ```
 
