@@ -1,6 +1,8 @@
 # R language
 
-The R-language has a steep learning curve, so focus and pay attention. Its is a specialised language created for Data Analysis and Statistical Predictive Modeling. Google recommended.
+The R-language has a steep learning curve, so focus and pay attention. Its is a specialised language created for Data Analysis and Statistical Predictive Modeling. It is not a general-purpose programming language. 
+
+Google recommended for Data Analysis.
 
 ## R-Framework with R-Studio
 
@@ -347,7 +349,7 @@ p <- cbind(seq(1,5), seq(6, 10))
 print(p)
 
 # Named rows, column
-rownames(n) <- c("1","2","3","4","5")
+rownames(n) <- c("1","2","3","4","5") # Numbers are also strings 
 colnames(n) <- c("a","b","c","d","e")
 
 print(n)
@@ -360,5 +362,78 @@ n["3","c"] <- 0
 rownames(n) <- NULL
 colnames(n) <- NULL
 print(n)
+```
+
+Matrix operations are similar to vector operations, the matrices involved must be of the same dimensions.
+
+### Subsetting
+
+#### Vectors
+
+``` R
+v = c("a","b","c","d","e")
+
+# Subset of v with values at index 1,5
+v[c(1,5)]
+# Sibset of v with value at index 4
+v[4]
+```
+
+#### Matrices
+
+``` R
+data <- 1:25
+m <- matrix(data, nrow=5, ncol=5, byrow = T)
+print(m)
+
+# Subset of m, Row 2,3, Columns 3 to 5
+m2 <- m[2:3, 3:5]
+print(m2)
+m3 = m[c(2,3), c(3:5)]
+print(m3)
+
+```
+
+### Exercise - IPL statistics
+
+Create matrices for top 10 IPL batsmen, row names are the player names, column names are the years 2015 - 2019.
+
+1. Number of matches
+2. Number of 6's
+3. Number of 4's
+4. Centuries
+5. Half-centuries
+6. Times bowled out
+7. Times caught
+8. Deliveries faced
+9. Deliveries scored
+10. Team won
+
+Create player performance statostics.
+Visualise with Matplot function.
+
+### Matplot
+
+Matplot will plot columns, if you want to plot rows then transpose the matrix.
+
+``` R
+data <- seq(1,25)
+n <- matrix(data, nrow=5, ncol=5)
+print(n)
+# Transpose function t
+n <- t(n)
+print(n)
+```
+
+When the subset is a single row or value the output is converted to a vector. For output to be a matrix use the `drop=FALSE` parameter. The extra dimension is not dropped.
+
+``` R
+m1 <- m[1,1]
+print(m1)
+is.vector(m1)
+
+m1 <- m[1,1, drop=F]
+print(m1)
+is.matrix(m1)
 ```
 
