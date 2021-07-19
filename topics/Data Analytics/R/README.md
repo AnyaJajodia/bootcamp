@@ -317,3 +317,36 @@ profit.min_month <- match(profit.min, profit.average)
 print(profit.max_month)
 print(profit.min_month)
 ```
+
+### Matrices
+
+A matrix has rows and columns. Index starts from 1.
+All elements are of same type.
+
+``` R
+m[1]    # Row 1, Column 1
+m[5]    # Row 1, Column 5
+m[3,4]  # Row 3, Column 4 
+m[1,]   # Rowc1
+m[,3]   # Column 3
+
+
+data <- 1:25
+
+m <- matrix(data, nrow=5, ncol=5)
+print(m)
+
+n <- matrix(data, nrow=5, ncol=5, byrow = TRUE)
+print(n)
+
+o <- rbind(seq(1,5), seq(6, 10))
+print(o)
+
+p <- cbind(seq(1,5), seq(6, 10))
+print(p)
+
+colnames(n) <- c("a","b","c","d","e")
+rownames(n) <- c("1","2","3","4","5")
+print(n)
+```
+
