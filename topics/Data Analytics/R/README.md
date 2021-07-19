@@ -419,7 +419,7 @@ Create matrices for top 10 IPL batsmen, row names are the player names, column n
 7. Times caught
 8. Deliveries faced
 9. Deliveries scored
-10. Team won
+10. Auction Price
 
 Create player performance statostics.
 Visualise with Matplot function.
