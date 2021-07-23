@@ -451,3 +451,87 @@ m.new <- create.matrix(5)
 print(m.new)
 ```
 
+### Data Frames
+
+Data Frames can have named columns, but rows are always numbered with starting index is 1.
+Data frames unlike matrices can contain columns of any type.
+
+``` R
+# Extract column data as vector
+col.3 <- data$<column_name>
+
+# or 
+col.3 <- data[, "<column_name>"]
+
+# Extract single value
+col.3 <- data$<column_name>[2]
+
+```
+
+#### Add Column
+
+``` R
+data$<new column name> <- c(1:100)
+```
+
+#### Subsetting
+
+The row numbers are retained in the subset data frame.
+Single row subset is not converted into a vector (unlike a matrix). However, single column is. Use `drop=F` to maintain structure.
+
+``` R
+data[1:5,] # Rows 1-5, all columns
+data[c(1,10),] # Rows 1 and 10, all columns
+
+# Single row subset
+is.data.frame(data[1,]) # check is single row subset is also a data frame
+
+# Single column subset
+is.data.frame(data[,1])
+is.data.frame(data[,1,drop=F])
+```
+
+### Importing data
+
+``` R
+?read.csv()
+
+# Prompt
+data <- read.csv(file.choose())
+
+# Display Working Directory
+getwd()
+
+# Set Working Directory
+setwd("C:\\Path to Dir") # On Windows escape "\"
+
+data <- read.csv("filename.csv")
+print(data)
+```
+
+### Data Navifation
+
+``` R
+# Number of rows
+nrow(data)
+
+# Number of columns
+ncol(data)
+
+# Top 5 rows
+head(data, n=5)
+
+# Bottom 5 rows
+tail(data, n=5)
+
+# Object Structure
+str(data)
+
+# Object Summary
+summary(data)
+
+# Factors in vector
+levels(data$<column_name>)
+
+
+```
