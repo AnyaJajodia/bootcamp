@@ -517,6 +517,9 @@ head(df[filter2,])
 ``` R
 # New data frame from match of df1.ColName1 with df2.ColName2
 df3 = merge(df1, df2, by.x="ColName1", by.y="ColName2")
+str(df3)
+head(df3)
+summary(df3)
 ```
 
 ### Importing data
@@ -589,5 +592,13 @@ qplot(data=df, x=Internet.users, y=Birth.rate,
       size=I(3), colour=I("red"))
 qplot(data=df, x=Internet.users, y=Birth.rate, 
       size=I(3), colour=Income.Group)
+
+
+# Visualise Merged data frame
+qplot(data=df_all, x=Internet.users, y=Birth.rate)
+qplot(data=df_all, x=Internet.users, y=Birth.rate, colour=Region)
+qplot(data=df_all, x=Internet.users, y=Birth.rate, colour=Region, 
+      size=I(3), shape=I(19), aplha=I(0.5),
+      main="Birth Rate v/s Internet Users")
 ```
 
