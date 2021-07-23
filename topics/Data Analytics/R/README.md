@@ -457,21 +457,24 @@ Data Frames can have named columns, but rows are always numbered with starting i
 Data frames unlike matrices can contain columns of any type.
 
 ``` R
+df1 = data.frame(Stat1=c(1:5), Start2=c(21:25), Words=c("One", "Two", "Three", "Four", "Five"))
+
+
 # Extract column data as vector
-col.3 <- data$<column_name>
+col.3 <- df1$<column_name>
 
 # or 
-col.3 <- data[, "<column_name>"]
+col.3 <- df1[, "<column_name>"]
 
 # Extract single value
-col.3 <- data$<column_name>[2]
+col.3 <- df1$<column_name>[2]
 
 ```
 
 #### Add Column
 
 ``` R
-data$<new column name> <- c(1:100)
+df$<new column name> <- c(1:100)
 ```
 
 The vector being added as a column must be the same length as the column or a multiple of it as the vector will be recycled (repeated).
@@ -479,7 +482,7 @@ The vector being added as a column must be the same length as the column or a mu
 #### Remove Column
 
 ``` R
-data$<column name> <- NULL
+df$<column name> <- NULL
 ```
 
 #### Subsetting
@@ -488,15 +491,32 @@ The row numbers are retained in the subset data frame.
 Single row subset is not converted into a vector (unlike a matrix). However, single column is. Use `drop=F` to maintain structure.
 
 ``` R
-data[1:5,] # Rows 1-5, all columns
-data[c(1,10),] # Rows 1 and 10, all columns
+df[1:5,] # Rows 1-5, all columns
+df[c(1,10),] # Rows 1 and 10, all columns
 
 # Single row subset
-is.data.frame(data[1,]) # check is single row subset is also a data frame
+is.data.frame(df[1,]) # check is single row subset is also a data frame
 
 # Single column subset
-is.data.frame(data[,1])
-is.data.frame(data[,1,drop=F])
+is.data.frame(df[,1])
+is.data.frame(df[,1,drop=F])
+```
+
+#### Filtering
+
+``` R
+filter1 <- df$Birth.rate < 25
+head(df[filter1,])
+
+filter2 <- df$Birth.rate < 25 & df$Income.Group == "Low income"
+head(df[filter2,])
+```
+
+#### Merge Data frames
+
+``` R
+# New data frame from match of df1.ColName1 with df2.ColName2
+df3 = merge(df1, df2, by.x="ColName1", by.y="ColName2")
 ```
 
 ### Importing data
@@ -505,7 +525,7 @@ is.data.frame(data[,1,drop=F])
 ?read.csv()
 
 # Prompt
-data <- read.csv(file.choose())
+df <- read.csv(file.choose())
 
 # Display Working Directory
 getwd()
@@ -513,43 +533,33 @@ getwd()
 # Set Working Directory
 setwd("C:\\Path to Dir") # On Windows escape "\"
 
-data <- read.csv("filename.csv")
-print(data)
+df <- read.csv("filename.csv")
+print(df)
 ```
 
 ### Data Navigation
 
 ``` R
 # Number of rows
-nrow(data)
+nrow(df)
 
 # Number of columns
-ncol(data)
+ncol(df)
 
 # Top 5 rows
-head(data, n=5)
+head(df, n=5)
 
 # Bottom 5 rows
-tail(data, n=5)
+tail(df, n=5)
 
 # Object Structure
-str(data)
+str(df)
 
 # Object Summary
-summary(data)
+summary(df)
 
 # Factors in vector
-levels(data$<column_name>)
-```
-
-### Filtering
-
-``` R
-filter1 <- data$Birth.rate < 25
-head(data[filter1,])
-
-filter2 <- data$Birth.rate < 25 & data$Income.Group == "Low income"
-head(data[filter2,])
+levels(df$<column_name>)
 ```
 
 ### Visualisation
@@ -562,13 +572,22 @@ install.packages("ggplot2") # Download
 library(ggplot2) # Install
 ?qplot()
 
+
 # Load data
-qplot(data=data, x=Internet.users)
-qplot(data=data, x=Income.Group, y=Birth.rate)
-qplot(data=data, x=Income.Group, y=Birth.rate, size=I(2))
-qplot(data=data, x=Income.Group, y=Birth.rate, size=I(2),
+qplot(data=df, x=Internet.users)
+qplot(data=df, x=Income.Group, y=Birth.rate)
+qplot(data=df, x=Income.Group, y=Birth.rate, size=I(2))
+qplot(data=df, x=Income.Group, y=Birth.rate, size=I(2),
       colour=I("blue"))
-qplot(data=data, x=Income.Group, y=Birth.rate, size=I(2),
+qplot(data=df, x=Income.Group, y=Birth.rate, size=I(2),
       colour=I("blue"), geom="boxplot")
+
+
+# Scatter Plot of relation
+qplot(data=df, x=Internet.users, y=Birth.rate)
+qplot(data=df, x=Internet.users, y=Birth.rate, 
+      size=I(3), colour=I("red"))
+qplot(data=df, x=Internet.users, y=Birth.rate, 
+      size=I(3), colour=Income.Group)
 ```
 
