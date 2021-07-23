@@ -474,6 +474,14 @@ col.3 <- data$<column_name>[2]
 data$<new column name> <- c(1:100)
 ```
 
+The vector being added as a column must be the same length as the column or a multiple of it as the vector will be recycled (repeated).
+
+#### Remove Column
+
+``` R
+data$<column name> <- NULL
+```
+
 #### Subsetting
 
 The row numbers are retained in the subset data frame.
@@ -509,7 +517,7 @@ data <- read.csv("filename.csv")
 print(data)
 ```
 
-### Data Navifation
+### Data Navigation
 
 ``` R
 # Number of rows
@@ -532,6 +540,35 @@ summary(data)
 
 # Factors in vector
 levels(data$<column_name>)
-
-
 ```
+
+### Filtering
+
+``` R
+filter1 <- data$Birth.rate < 25
+head(data[filter1,])
+
+filter2 <- data$Birth.rate < 25 & data$Income.Group == "Low income"
+head(data[filter2,])
+```
+
+### Visualisation
+
+#### qplot
+
+``` R
+# GPlot
+install.packages("ggplot2") # Download
+library(ggplot2) # Install
+?qplot()
+
+# Load data
+qplot(data=data, x=Internet.users)
+qplot(data=data, x=Income.Group, y=Birth.rate)
+qplot(data=data, x=Income.Group, y=Birth.rate, size=I(2))
+qplot(data=data, x=Income.Group, y=Birth.rate, size=I(2),
+      colour=I("blue"))
+qplot(data=data, x=Income.Group, y=Birth.rate, size=I(2),
+      colour=I("blue"), geom="boxplot")
+```
+
