@@ -522,6 +522,27 @@ head(df3)
 summary(df3)
 ```
 
+#### Factor
+
+Certain columns, e.g. a year column is usually used to categorise data. Its not used as a numeric value. Converting this column from an int into a number will allow for grouping by that column i.e. column is now a factor instead of an int.
+
+e.g. Movie Rating db, "Year" column is originally an int, convert to a factor
+
+``` R
+# Movie Ratings db
+df <- read.csv(file.choose())
+str(df)
+summary(df)
+head(df)
+factor(df$Year.of.release)
+
+# Convert column to factors
+df$Year.of.release <- factor(df$Year.of.release)
+df$Genre <- factor(df$Genre)
+
+str(df)
+```
+
 ### Importing data
 
 ``` R
@@ -567,6 +588,18 @@ levels(df$<column_name>)
 
 ### Visualisation
 
+[Charles Minard](https://www.nationalgeographic.com/culture/article/charles-minard-cartography-infographics-history)
+
+Components of a Graph/Plot are;
+1. Data
+2. Aesthetics
+3. Geometries
+4. Statistics
+5. Facets
+6. Coordinates
+7. Themes
+
+
 #### qplot
 
 ``` R
@@ -600,5 +633,15 @@ qplot(data=df_all, x=Internet.users, y=Birth.rate, colour=Region)
 qplot(data=df_all, x=Internet.users, y=Birth.rate, colour=Region, 
       size=I(3), shape=I(19), aplha=I(0.5),
       main="Birth Rate v/s Internet Users")
+```
+
+#### Ggplot
+
+``` R
+# GPlot
+install.packages("ggplot2") # Download
+library(ggplot2) # Install
+
+
 ```
 
